@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Marketing Expert</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #4ade80 0%, #3b82f6 50%, #8b5cf6 100%);
+        }
+        .sidebar-transition {
+            transition: transform 0.3s ease-in-out;
+        }
+        .overlay {
+            transition: opacity 0.3s ease-in-out;
+        }
+        .hero-shape {
+            clip-path: polygon(0 0, 70% 0, 85% 100%, 0% 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        .typing-animation {
+            border-right: 2px solid #4ade80;
+            animation: typing 3s steps(20) infinite;
+        }
+        @keyframes typing {
+            0%, 50% { border-color: transparent; }
+            51%, 100% { border-color: #4ade80; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Mobile Menu Button -->
+    <button id="mobile-menu-btn" class="fixed top-4 left-4 z-50 lg:hidden bg-white p-3 rounded-lg shadow-lg">
+        <i class="fas fa-bars text-gray-700"></i>
+    </button>
+
+    <!-- Sidebar -->
+    <div id="sidebar" class="fixed left-0 top-0 h-full w-64 bg-white shadow-2xl transform -translate-x-full lg:translate-x-0 sidebar-transition z-40">
+        <div class="p-6">
+            <!-- Logo -->
+            <div class="flex items-center mb-8">
+                <div class="w-10 h-10 gradient-bg rounded-lg flex items-center justify-center mr-3">
+                    <i class="fas fa-rocket text-white text-lg"></i>
+                </div>
+                <h2 class="text-xl font-bold text-gray-800">Info.me</h2>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="space-y-2">
+                <a href="#home" class="nav-link flex items-center px-4 py-3 text-gray-700 rounded-lg hover:bg-green-50 hover:text-green-600 transition-colors">
+                    <i class="fas fa-home mr-3"></i>
+                    Home
+                </a>
+                <a href="#about" class="nav-link flex items-center px-4 py-3 text-gray-700 rounded-lg hover:bg-green-50 hover:text-green-600 transition-colors">
+                    <i class="fas fa-user mr-3"></i>
+                    About
+                </a>
+                <a href="#services" class="nav-link flex items-center px-4 py-3 text-gray-700 rounded-lg hover:bg-green-50 hover:text-green-600 transition-colors">
+                    <i class="fas fa-cogs mr-3"></i>
+                    Services
+                </a>
+                <a href="#portfolio" class="nav-link flex items-center px-4 py-3 text-gray-700 rounded-lg hover:bg-green-50 hover:text-green-600 transition-colors">
+                    <i class="fas fa-briefcase mr-3"></i>
+                    Portfolio
+                </a>
+                <a href="#contact" class="nav-link flex items-center px-4 py-3 text-gray-700 rounded-lg hover:bg-green-50 hover:text-green-600 transition-colors">
+                    <i class="fas fa-envelope mr-3"></i>
+                    Contact
+                </a>
+            </nav>
+
+            <!-- Contact Info -->
+            <div class="mt-8 pt-8 border-t border-gray-200">
+                <div class="space-y-4">
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-phone mr-3 text-green-500"></i>
+                        <span>082920183</span>
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-envelope mr-3 text-green-500"></i>
+                        <span>phamist000@gmail.com</span>
+                    </div>
+                    <div class="flex items-center text-sm text-gray-600">
+                        <i class="fas fa-map-marker-alt mr-3 text-green-500"></i>
+                        <span>SaVanNakhet, Lao</span>
+                    </div>
+                </div>
+
+                <!-- Social Links -->
+                <div class="flex space-x-3 mt-6">
+                    <a href="#" class="w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center hover:bg-blue-200 transition-colors">
+                        <i class="fab fa-facebook-f text-sm"></i>
+                    </a>
+                    <a href="#" class="w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center hover:bg-blue-200 transition-colors">
+                        <i class="fab fa-twitter text-sm"></i>
+                    </a>
+                    <a href="#" class="w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center hover:bg-blue-200 transition-colors">
+                        <i class="fab fa-linkedin-in text-sm"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay for mobile -->
+    <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 z-30 opacity-0 pointer-events-none overlay lg:hidden"></div>
+
+    <!-- Main Content -->
+    <div class="lg:ml-64 min-h-screen">
+        <!-- Hero Section -->
+        <section id="home" class="relative min-h-screen flex items-center bg-gradient-to-br from-green-50 to-blue-50 overflow-hidden">
+            <div class="absolute inset-0 hero-shape gradient-bg opacity-10"></div>
+            
+            <div class="container mx-auto px-6 lg:px-12 relative z-10">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-8">
+                        <div class="space-y-4">
+                            <h1 class="text-5xl lg:text-7xl font-bold text-gray-800 leading-tight">
+                                    Shoppig <br>
+                                <span class="text-green-500 typing-animation">Service</span><br>
+                                4 You
+                            </h1>
+                            <p class="text-xl text-gray-600 max-w-lg">
+                                ບໍລິການຮັບຫິວຄົບວົງຈອນ ສະດວກ ປອດໄພ ໃຫ້ບໍລິການສົ່ງເຖິງບ້ານທ່ານຈຳກັດຜູ້ດຽວ ໃນສະໂລເເກນທີ່ວ່າ Shoping for You Lao-Thai-VietNam                          </p>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-4">
+                            <button class="bg-green-500 text-white px-8 py-4 rounded-lg font-semibold hover:bg-green-600 transition-colors pulse-animation">
+                                GET STARTED
+                            </button>
+                            <button class="border-2 border-green-500 text-green-500 px-8 py-4 rounded-lg font-semibold hover:bg-green-500 hover:text-white transition-colors">
+                                VIEW PORTFOLIO
+                            </button>
+                        </div>
+
+                        <div class="grid grid-cols-3 gap-8 pt-8">
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-gray-800">2000+</div>
+                                <div class="text-sm text-gray-600">Follower</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-gray-800">98%</div>
+                                <div class="text-sm text-gray-600">fast reply massage</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-3xl font-bold text-gray-800">3+</div>
+                                <div class="text-sm text-gray-600">Years Experience</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <div class="relative z-10">
+                            <img src="./public/images/business.jpg" 
+                                 alt="Digital Marketing Expert" 
+                                 class="w-full max-w-md mx-auto rounded-2xl shadow-2xl">
+                        </div>
+                        <div class="absolute -top-4 -right-4 w-full h-full bg-gradient-to-br from-green-400 to-blue-500 rounded-2xl opacity-20"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 bg-white">
+            <div class="container mx-auto px-6 lg:px-12">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-4">About Me</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                       ຂ້ອຍຊື່ວ່າ ເຈນນີ້ ເອີ້ນເເບບສະນິດວ່າ ນາງ ເຈນ ຂ້ອຍເລີ່ມເຮັດຮັບຫິ້ວມາກໍ່ເປັນໄລຍະເວລາບໍ່ຫນ້ອຍ ເພາະເຫັນຫມູ່ເພື່ອນທີ່ເປັນຜູ້ປະກອບການຫລືຜູ້ທີ່ມີວຽກປະຈຳ ອາດຈະບໍ່ມີເວລາໃນການຊື້ເຄື່ອງດ້ວຍຕົນເອງ ເຈນນີ້ເອງເລີຍເຮັດບໍລິການຮັບຫິ້ວ shoping service for you ເພື່ອບໍລິການທຸກຄົນເດີຈ້າວ
+                    </p>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div class="space-y-6">
+                        <h3 class="text-3xl font-bold text-gray-800">My Story</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            ເຈນ ຢູ່ບ້ານ ໂພນສະຫວ່າງໄຕ້ ນະຄອນໄກສອນ ເເຂວງ ສະຫວັນນະເຂດ ຊ່ວງໄລຍະເວລາ 3 ປີ ເຈນເຮັດວຽກນີ້ເຈນຂ້ອນຂ້າງເກັບປະສົບການໃນວຽກນີ້ຫລາຍ ເລີຍກຳຈຸດພິເສດໄດ້ວ່າເວລາ ກັບ ຄວາມໃສ່ໃຈໃນລູກຄ້ານັ້ນສ່ຳກ່ອນຫມູ່  ຈຶ່ງເຮັດໃຫ້ເຈນເອງມີລູກຄ້າປະຈຳເປັນຈຳນວນບໍ່ຫນ້ອຍ ເພາະ ເຈນບໍລິການເເບບຈິງໃຈ ເເລະ ມີຈັນຍາບັນ ທັງ ໃຫ້ຄວາມເຊື່ອຫມັ້ນຕໍ່ລູກຄ້າເດີ.
+                        </p>
+                        </p>
+                        <p class="text-gray-600 leading-relaxed">
+                            ເຖິງວ່າ ເຈນ ຈະຢູ່ສະຫວັນນະເຂດ ເຈນ ສົ່ງທົ່ວປະເທດລາວ ເເລະ ປະອ້ອມຂ້າງ ຟາກເເມ່ນ້ຳຂອງ ປະເທດໄທ ທັງປະເທດອ້າຍນ້ອງຕ່າງ ມານດາ ປະເທດຫວຽດຕາມເງື່ອນໄຂຂອງລູກຄ້າຕ້ອງການເລີຍຈາ 
+                        </p>
+                        
+                        <div class="grid grid-cols-2 gap-6 pt-6">
+                            <div class="text-center p-6 bg-green-50 rounded-lg">
+                                <i class="fas fa-chart-line text-3xl text-green-500 mb-3"></i>
+                                <h4 class="font-semibold text-gray-800">Growth Focused</h4>
+                            </div>
+                            <div class="text-center p-6 bg-blue-50 rounded-lg">
+                                <i class="fas fa-users text-3xl text-blue-500 mb-3"></i>
+                                <h4 class="font-semibold text-gray-800">Client Centered</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-6">
+                        <h3 class="text-3xl font-bold text-gray-800">Skills & Expertise</h3>
+                        
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-semibold text-gray-700">Grow up</span>
+                                    <span class="text-green-500 font-semibold">95%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-3">
+                                    <div class="bg-gradient-to-r from-green-400 to-green-600 h-3 rounded-full" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-semibold text-gray-700">Success Order</span>
+                                    <span class="text-blue-500 font-semibold">90%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-3">
+                                    <div class="bg-gradient-to-r from-blue-400 to-blue-600 h-3 rounded-full" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-semibold text-gray-700">Fast Ship</span>
+                                    <span class="text-purple-500 font-semibold">88%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-3">
+                                    <div class="bg-gradient-to-r from-purple-400 to-purple-600 h-3 rounded-full" style="width: 88%"></div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-semibold text-gray-700">5 star</span>
+                                    <span class="text-red-500 font-semibold">92%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-3">
+                                    <div class="bg-gradient-to-r from-red-400 to-red-600 h-3 rounded-full" style="width: 92%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6 lg:px-12">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-4">Services</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        ຮູບເເບບ ການບໍລິການ ເເລະ ສ່ອງທາງຕິດຕໍ່.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-2xl shadow-lg card-hover">
+                        <div class="w-16 h-16 gradient-bg rounded-lg flex items-center justify-center mb-6">
+                            <i class="fas fa-search text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Following Product</h3>
+                        <p class="text-gray-600 mb-6">ຕິດຕາມທາງເຟສບຸກສ່ວນຕົວ ຂອງເຈນໄດ້ເລີຍຈະມີການອັປເດດເປັນລາຍວັນ ທັງຕິດຕາມວັນຮັບອໍເດີ້.</p>
+                        <a href="https://www.facebook.com/jenny.phamisith" class="text-green-500 font-semibold hover:text-green-600 transition-colors">GO to Facebook →</a>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-2xl shadow-lg card-hover">
+                        <div class="w-16 h-16 gradient-bg rounded-lg flex items-center justify-center mb-6">
+                            <i class="fas fa-share-alt text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Social Media</h3>
+                        <p class="text-gray-600 mb-6">Build and engage your community across all major social media platforms.</p>
+                        <a href="#" class="text-green-500 font-semibold hover:text-green-600 transition-colors">Learn More →</a>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-2xl shadow-lg card-hover">
+                        <div class="w-16 h-16 gradient-bg rounded-lg flex items-center justify-center mb-6">
+                            <i class="fas fa-bullhorn text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">PPC Advertising</h3>
+                        <p class="text-gray-600 mb-6">Maximize ROI with targeted paid advertising campaigns across Google and social platforms.</p>
+                        <a href="#" class="text-green-500 font-semibold hover:text-green-600 transition-colors">Learn More →</a>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-2xl shadow-lg card-hover">
+                        <div class="w-16 h-16 gradient-bg rounded-lg flex items-center justify-center mb-6">
+                            <i class="fas fa-pen-fancy text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Content Marketing</h3>
+                        <p class="text-gray-600 mb-6">Create compelling content that resonates with your audience and drives conversions.</p>
+                        <a href="#" class="text-green-500 font-semibold hover:text-green-600 transition-colors">Learn More →</a>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-2xl shadow-lg card-hover">
+                        <div class="w-16 h-16 gradient-bg rounded-lg flex items-center justify-center mb-6">
+                            <i class="fas fa-envelope-open text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Email Marketing</h3>
+                        <p class="text-gray-600 mb-6">Nurture leads and retain customers with personalized email marketing campaigns.</p>
+                        <a href="#" class="text-green-500 font-semibold hover:text-green-600 transition-colors">Learn More →</a>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-2xl shadow-lg card-hover">
+                        <div class="w-16 h-16 gradient-bg rounded-lg flex items-center justify-center mb-6">
+                            <i class="fas fa-chart-bar text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Analytics</h3>
+                        <p class="text-gray-600 mb-6">Track, measure, and optimize your marketing performance with detailed analytics.</p>
+                        <a href="#" class="text-green-500 font-semibold hover:text-green-600 transition-colors">Learn More →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-white">
+            <div class="container mx-auto px-6 lg:px-12">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-4">Get In Touch</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Ready to take your digital marketing to the next level? Let's discuss your project and goals.
+                    </p>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-16">
+                    <div class="space-y-8">
+                        <h3 class="text-3xl font-bold text-gray-800">Let's Work Together</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            I'm always excited to work on new projects and help businesses achieve their digital marketing goals. Whether you need a complete strategy overhaul or specific campaign optimization, I'm here to help.
+                        </p>
+
+                        <div class="space-y-6">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-phone text-green-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Phone</h4>
+                                    <p class="text-gray-600">+856 2096635558</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-envelope text-blue-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Email</h4>
+                                    <p class="text-gray-600">info@digitalpro.com</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-map-marker-alt text-purple-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Location</h4>
+                                    <p class="text-gray-600">Da Nang, Vietnam</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex space-x-4 pt-6">
+                            <a href="https://www.facebook.com/jenny.phamisith" class="w-12 h-12 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center hover:bg-blue-200 transition-colors">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center hover:bg-blue-200 transition-colors">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center hover:bg-blue-200 transition-colors">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-8 rounded-2xl">
+                        <form class="space-y-6">
+                           
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gray-800 text-white py-12">
+            <div class="container mx-auto px-6 lg:px-12">
+                <div class="text-center">
+                    <div class="flex items-center justify-center mb-6">
+                        <div class="w-12 h-12 gradient-bg rounded-lg flex items-center justify-center mr-3">
+                            <i class="fas fa-rocket text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold">DigitalPro</h3>
+                    </div>
+                    <p class="text-gray-400 mb-6 max-w-2xl mx-auto">
+                        Transforming businesses through innovative digital marketing strategies. Let's grow your online presence together.
+                    </p>
+                    <div class="flex justify-center space-x-6 mb-6">
+                        <a href="https://www.facebook.com/jenny.phamisith" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-instagram text-xl"></i>
+                          </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-linkedin-in text-xl"></i>
+                        </a>
+                    </div>
+                    <p class="text-gray-500 text-sm">
+                        © 2025 Depveloper by Vanhmixay. All rights reserved.
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Mobile menu functionality
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('overlay');
+        
+        function toggleMobileMenu() {
+            sidebar.classList.toggle('-translate-x-full');
+            overlay.classList.toggle('opacity-0');
+            overlay.classList.toggle('pointer-events-none');
+        }
+        
+        mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+        overlay.addEventListener('click', toggleMobileMenu);
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                
+                if (targetSection) {
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (window.innerWidth < 1024) {
+                        toggleMobileMenu();
+                    }
+                }
+            });
+        });
+        
+        // Active navigation highlighting
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('bg-green-50', 'text-green-600');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('bg-green-50', 'text-green-600');
+                }
+            });
+        });
+        
+        // Form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+        });
+        
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.card-hover, .hero-shape').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease-out';
+            observer.observe(el);
+        });
+
+        // Add WhatsApp floating button functionality
+        function createWhatsAppButton() {
+            const whatsappBtn = document.createElement('div');
+            whatsappBtn.innerHTML = `
+                <a href="https://wa.me/+8562096635558" target="_blank" 
+                   class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition-all duration-300 hover:scale-110">
+                    <i class="fab fa-whatsapp text-white text-2xl"></i>
+                </a>
+            `;
+            document.body.appendChild(whatsappBtn);
+        }
+        
+        // Initialize WhatsApp button
+        createWhatsAppButton();
+
+        // Add loading animation for images
+        document.querySelectorAll('img').forEach(img => {
+            img.addEventListener('load', function() {
+                this.style.opacity = '1';
+            });
+            img.style.opacity = '0';
+            img.style.transition = 'opacity 0.5s ease-in-out';
+        });
+
+        // Counter animation for statistics
+        function animateCounters() {
+            const counters = document.querySelectorAll('.text-3xl');
+            counters.forEach(counter => {
+                const target = parseInt(counter.textContent);
+                const increment = target / 100;
+                let current = 0;
+                
+                const updateCounter = () => {
+                    if (current < target) {
+                        current += increment;
+                        counter.textContent = Math.ceil(current) + (counter.textContent.includes('+') ? '+' : '') + (counter.textContent.includes('%') ? '%' : '');
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target + (counter.textContent.includes('+') ? '+' : '') + (counter.textContent.includes('%') ? '%' : '');
+                    }
+                };
+                
+                // Start animation when element is visible
+                const counterObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            updateCounter();
+                            counterObserver.unobserve(entry.target);
+                        }
+                    });
+                });
+                
+                counterObserver.observe(counter);
+            });
+        }
+
+        // Initialize counter animation
+        animateCounters();
+
+        // Add parallax effect to hero section
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('.hero-shape');
+            if (parallax) {
+                const speed = scrolled * 0.5;
+                parallax.style.transform = `translateY(${speed}px)`;
+            }
+        });
+
+        // Add typing effect to hero title
+        function typeWriter(element, text, speed = 100) {
+            let i = 0;
+            element.innerHTML = '';
+            
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            type();
+        }
+
+        // Initialize typing effect after page load
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                const typingElement = document.querySelector('.typing-animation');
+                if (typingElement) {
+                    typeWriter(typingElement, 'Marketing', 150);
+                }
+            }, 1000);
+        });
+
+        // Add smooth hover effects for service cards
+        document.querySelectorAll('.card-hover').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Add progress bar animation for skills
+        function animateProgressBars() {
+            const progressBars = document.querySelectorAll('.bg-gradient-to-r');
+            
+            progressBars.forEach(bar => {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const width = bar.style.width;
+                            bar.style.width = '0%';
+                            setTimeout(() => {
+                                bar.style.width = width;
+                                bar.style.transition = 'width 2s ease-out';
+                            }, 100);
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                });
+                
+                observer.observe(bar);
+            });
+        }
+
+        // Initialize progress bar animation
+        animateProgressBars();
+
+        // Add contact form validation
+        function validateForm() {
+            const form = document.querySelector('form');
+            const inputs = form.querySelectorAll('input, textarea');
+            
+            inputs.forEach(input => {
+                input.addEventListener('blur', function() {
+                    if (this.value.trim() === '') {
+                        this.classList.add('border-red-500');
+                        this.classList.remove('border-gray-300');
+                    } else {
+                        this.classList.remove('border-red-500');
+                        this.classList.add('border-green-500');
+                    }
+                });
+            });
+        }
+
+        // Initialize form validation
+        validateForm();
+
+        // Add scroll-to-top button
+        function createScrollToTop() {
+            const scrollBtn = document.createElement('div');
+            scrollBtn.innerHTML = `
+                <button id="scrollToTop" class="fixed bottom-24 right-6 z-40 w-12 h-12 bg-gray-800 text-white rounded-full shadow-lg opacity-0 pointer-events-none transition-all duration-300 hover:bg-gray-700">
+                    <i class="fas fa-chevron-up"></i>
+                </button>
+            `;
+            document.body.appendChild(scrollBtn);
+            
+            const scrollToTopBtn = document.getElementById('scrollToTop');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollToTopBtn.style.opacity = '1';
+                    scrollToTopBtn.style.pointerEvents = 'auto';
+                } else {
+                    scrollToTopBtn.style.opacity = '0';
+                    scrollToTopBtn.style.pointerEvents = 'none';
+                }
+            });
+            
+            scrollToTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+
+        // Initialize scroll-to-top button
+        createScrollToTop();
+
+        console.log('✅ Digital Marketing Website loaded successfully!');
+    </script>
+</body>
+</html>
